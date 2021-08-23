@@ -55,3 +55,12 @@ function wp_ernst_setup() {
 }
 endif; // wp_ernst_setup
 add_action( 'after_setup_theme', 'wp_ernst_setup' );
+
+function add_wp_ernst_scripts() {
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+  
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'add_wp_ernst_scripts' );
