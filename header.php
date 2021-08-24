@@ -18,10 +18,23 @@
 
 <body <?php body_class(); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'humberto' ); ?></a>
-  <div class="site-information">
-    <h1><?php echo get_bloginfo('name'); ?></h1>
-    <p><?php echo get_bloginfo('description'); ?></p>
-  </div>
+	<header class="site-header">
+		<div class="site-information">
+			<h1><a href="<?php echo get_bloginfo('wpurl'); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+			<p><?php echo get_bloginfo('description'); ?></p>
+		</div>
+		<nav>
+			<?php
+				wp_nav_menu(
+					array(
+						'menu' => 'Primary',
+						'theme_location' => 'extra-menu',
+						'container_class' => 'my_extra_menu_class',
+					)
+				);
+			?>
+		</nav>
+	</header>
 	
 	<!-- start content here -->
 	<div id="content" class="content">
