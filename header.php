@@ -19,8 +19,8 @@
 <body <?php body_class(); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'humberto' ); ?></a>
   <div class="site-information">
-    <h1><?php get_bloginfo('name'); ?></h1>
-    <p><?php get_bloginfo('description'); ?></p>
+    <h1><?php echo get_bloginfo('name'); ?></h1>
+    <p><?php echo get_bloginfo('description'); ?></p>
   </div>
 	
 	<!-- start content here -->
