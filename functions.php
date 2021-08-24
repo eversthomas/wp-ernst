@@ -66,4 +66,4 @@ function add_wp_ernst_scripts() {
 add_action( 'wp_enqueue_scripts', 'add_wp_ernst_scripts' );
 
 // include some hooks
-<?php require_once( get_stylesheet_directory(). '/hooks/hooks.php.php' ); ?>
+require_once( get_stylesheet_directory(). '/hooks/hooks.php' );
