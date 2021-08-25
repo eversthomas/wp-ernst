@@ -42,10 +42,15 @@ function wp_ernst_setup() {
     /**
      * Add support for two custom navigation menus.
      */
-    register_nav_menus( array(
-        'primary'   => __( 'Primary Menu', 'wp_ernst' ),
-        'secondary' => __('Secondary Menu', 'wp_ernst' )
-    ) );
+    function wp_ernst_menus() {
+      register_nav_menus(
+        array(
+          'header-menu' => __( 'Header Menu' ),
+          'extra-menu' => __( 'Extra Menu' )
+         )
+       );
+     }
+     add_action( 'init', 'wp_ernst_menus' );
  
     /**
      * Enable support for the following post formats:
