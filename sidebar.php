@@ -1,1 +1,3 @@
-<h3>Sidebar</h3>
+<aside>
+    <?php dynamic_sidebar( 'primary' ); ?>
+</aside>
