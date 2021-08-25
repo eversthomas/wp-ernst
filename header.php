@@ -23,16 +23,14 @@
 			<h1><a href="<?php echo get_bloginfo('wpurl'); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
 			<p><?php echo get_bloginfo('description'); ?></p>
 		</div>
+		
+		<label for="menu-toggle">Menu</label>
+		<input id="menu-toggle" type="checkbox" name="menu-toggle">
 		<nav>
-			<?php
-				wp_nav_menu(
-					array(
-						'menu' => 'Primary',
-						'theme_location' => 'extra-menu',
-						'container_class' => 'my_extra_menu_class',
-					)
-				);
-			?>
+			<?php wp_nav_menu( array(
+			    'theme_location' => 'header-menu',
+			    'container' => false,
+			    ) ); ?>
 		</nav>
 	</header>
 	
